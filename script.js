@@ -42,6 +42,9 @@ function checksuccess(){
         && password2correct && passwordcorrect){
             document.getElementById("successmessage").innerHTML = "Sign up successful";
         }
+    else{
+        document.getElementById("successmessage").innerHTML = "Enter information correctly";
+    }
 }
 function checkname(){
     let name = document.getElementById("nameip").value;
