@@ -181,3 +181,7 @@ body{
 .usernameerror{
     font-size: 1em;
 }
+
+.error{
+    color:red;
+}
