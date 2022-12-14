@@ -32,11 +32,17 @@ const container = document.querySelector(".container"),
     login.addEventListener("click", ( )=>{
         container.classList.remove("active");
     });
+//declaring global variables to store state of the checks
 var namecorrect = false;
 var emailcorrect = false;
 var passwordcorrect = false;
 var password2correct = false;
 var pwd="";
+
+/**
+ * Function to check all 4 checks are met
+ * triggered by "Sign in" button click
+ */
 function checksuccess(){
     document.getElementById("successmessage").innerHTML = "";
     if(namecorrect && emailcorrect 
@@ -47,27 +53,45 @@ function checksuccess(){
         document.getElementById("successmessage").innerHTML = "Enter information correctly";
     }
 }
+
+/**
+ * Function to check name entered is in the correct format
+ * triggered by keyup in name field 
+ */
 function checkname(){
+    //reading input in field
     let name = document.getElementById("nameip").value;
+
+    //defining specialized regex expression for name
     const nameregex = /^[A-Za-z]+$/;
     if(name.match(nameregex)){
         namecorrect = true;
         document.getElementById("nameerror").innerHTML = "";
-        //console.log(name+"ok");
+        
     }
     else{
         namecorrect = false;
+        //handling empty input
         if(name.toString().trim() !=""){
             document.getElementById("nameerror").innerHTML = "Enter valid name";
         }
         
-        //console.log(name);
+        
     }
     
 }
+
+/**
+ * Function to check email entered is in the correct format
+ * triggered by keyup in email field 
+ */
 function checkemail(){
+    //reading input in field
     let email = document.getElementById("emailip").value;
+
+    //defining specialized regex expression for email
     const emailregex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
     if(email.match(emailregex)){
         emailcorrect = true;
         document.getElementById("emailerror").innerHTML = "";
@@ -75,6 +99,8 @@ function checkemail(){
     }
     else{
         emailcorrect = false;
+
+        //handling empty input
         if(email.toString().trim() !=""){
             document.getElementById("emailerror").innerHTML = "Enter valid email";
         }
@@ -82,10 +108,18 @@ function checkemail(){
         console.log(email);
     }
 }
+
+/**
+ * Function to check password entered is in the correct format
+ * triggered by keyup in password field 
+ */
 function checkpassword(){
-    
+    //reading input in field
     let password = document.getElementById("passwordip").value;
+
+    //defining specialized regex expression for password
     const passwordregex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
     if(password.match(passwordregex)){
         passwordcorrect = true;
         document.getElementById("passworderror").innerHTML = "";
@@ -102,8 +136,15 @@ function checkpassword(){
         console.log(password);
     }
 }
+
+/**
+ * Function to check both the passwords match
+ * triggered by keyup in second password field
+ */
 function checkpassword2(){
+    //reading input in field
     let password2 = document.getElementById("password2ip").value;
+
     if(password2 == pwd){
         document.getElementById("passworderror2").innerHTML = "";
         password2correct = true;
