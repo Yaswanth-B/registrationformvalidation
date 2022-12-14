@@ -107,7 +107,7 @@ function checkpassword2(){
         password2correct = true;
     }
     else{
-        password2correct = true;
+        password2correct = false;
         document.getElementById("passworderror2").innerHTML = "Passwords don't match";
     }   
 }
