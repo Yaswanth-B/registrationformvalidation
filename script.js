@@ -95,7 +95,7 @@ function checkpassword(){
     else{
         passwordcorrect = false;
         if(password.toString().trim() !=""){
-            document.getElementById("passworderror").innerHTML = "Enter valid password";
+            document.getElementById("passworderror").innerHTML = "Minumum: 1-Symbol, 1-Uppercase, 1-Lowercase";
         }
         
         console.log(password);
