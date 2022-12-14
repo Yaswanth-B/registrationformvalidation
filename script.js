@@ -140,6 +140,7 @@ function checkpassword(){
 /**
  * Function to check both the passwords match
  * triggered by keyup in second password field
+ * error message is note dependendent on validation of password
  */
 function checkpassword2(){
     //reading input in field
