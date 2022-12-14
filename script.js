@@ -37,6 +37,8 @@ var namecorrect = false;
 var emailcorrect = false;
 var passwordcorrect = false;
 var password2correct = false;
+
+//global password variable
 var pwd="";
 
 /**
