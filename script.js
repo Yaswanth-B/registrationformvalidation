@@ -38,6 +38,7 @@ var passwordcorrect = false;
 var password2correct = false;
 var pwd="";
 function checksuccess(){
+    document.getElementById("successmessage").innerHTML = "";
     if(namecorrect && emailcorrect 
         && password2correct && passwordcorrect){
             document.getElementById("successmessage").innerHTML = "Sign up successful";
