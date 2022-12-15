@@ -183,5 +183,27 @@ body{
 }
 
 .error{
-    color:red;
+    color:green;
+}
+
+#emailerror{
+	color:green;
+}
+
+.progress-bar {
+  border-radius: 5px;
+}
+
+#bar{
+	width: 400px;
+  margin: auto;
+}
+
+.req{
+	color:red;
+}
+
+#nameerror{
+	z-index: 5;
+	color:red;
 }
